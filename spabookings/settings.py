@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['spa.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['spabookings.herokuapp.com', 'localhost']
 
 
 # Application definition
