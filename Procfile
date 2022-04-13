@@ -1,1 +1,1 @@
-web: gunicorn spa.wsgi
+web: gunicorn spabookings.wsgi
