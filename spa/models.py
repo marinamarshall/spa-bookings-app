@@ -30,7 +30,7 @@ class Client(models.Model):
     client_phone = models.IntegerField()
 
     def __str__(self):
-        return self
+        return f"New client added: {self.client_name} {self.client_phone} {self.client_email}"
 
 
 class Booking(models.Model):
