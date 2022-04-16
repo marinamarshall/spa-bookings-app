@@ -24,6 +24,10 @@ class ClientAdmin(admin.ModelAdmin):
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
     """ BookingAdmin """
-    list_display = ('booking_id', 'booking_date', 'booking_time', 'booked_status')
-    list_filter = ('booking_id', 'booking_date', 'booking_time', 'booked_status')
-    search_fields = ['booking_id', 'booking_date', 'booking_time', 'booked_status']
+    list_display = ('booking_specification', 'booked_status')
+    list_filter = ('booking_specification', 'booked_status')
+    search_fields = ['booking_specification', 'booked_status']
+    actions = ['approve_booking']
+
+    def approve_booking(self, request, queryset):
+        queryset.update(approved=True)

@@ -22,9 +22,9 @@ class Treatment(models.Model):
 
 class Client(models.Model):
     """ client """
-    treatment = models.ForeignKey(
-        Treatment, on_delete=models.CASCADE, related_name="client_treatments")
-    client_id = models.IntegerField()
+    # treatment = models.ForeignKey(
+    #     Treatment, on_delete=models.CASCADE, related_name="client_treatments")
+    # client_id = models.IntegerField()
     client_name = models.CharField(max_length=50)
     client_email = models.EmailField(unique=True)
     client_phone = models.IntegerField()
@@ -35,11 +35,11 @@ class Client(models.Model):
 
 class Booking(models.Model):
     """ booking """
-    booking_id = models.ForeignKey(
-        Client, on_delete=models.CASCADE, related_name="client_treatments")
-    booking_date = models.DateTimeField(unique=True)
-    booking_time = models.DurationField()
+    # booking_id = models.ForeignKey(
+    #     Client, on_delete=models.CASCADE, related_name="client_treatments")
+    booking_specification = models.DateTimeField(unique=True)
+    # booking_time = models.DurationField()
     booked_status = models.IntegerField(choices=BOOKED, default=0)
 
     def __str__(self):
-        return self
+        return f"Your booking for {self.booking_specification} has been {self.booked_status}"
