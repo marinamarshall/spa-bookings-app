@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +9,8 @@
     <title>Document</title>
 </head>
 <body>
-    
+    {% for treatment in object_list %}
+    {{ treatment.title }}
+    {% endfor %}
 </body>
 </html>
