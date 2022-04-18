@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +13,13 @@
     <script src="https://kit.fontawesome.com/64eda5d7b8.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <nav></nav>
+
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <footer></footer>
 </body>
 </html>
