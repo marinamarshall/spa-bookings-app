@@ -2,8 +2,14 @@
 
 {% block content %}
 
-    {% for treatment in object_list %}
-        {{ treatment.title }}
-    {% endfor %}
+<div class="container-fluid">
+    <div class="row">
+
+        {% for treatment in object_list %}
+            {{ treatment.title }}
+        {% endfor %}
+
+    </div>
+</div>
 
 {% endblock %}
