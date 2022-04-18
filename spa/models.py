@@ -7,12 +7,12 @@ BOOKED = ((0, "Unconfirmed"), (1, "Booked"))
 
 class Treatment(models.Model):
     """ treatments """
-    featured_image = CloudinaryField('image', default='placeholder')
-    category = models.CharField(max_length=15)
+    # featured_image = CloudinaryField('image', default='placeholder')
+    # category = models.CharField(max_length=15)
     title = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=50, unique=True)
     description = models.TextField()
-    time = models.DateTimeField(unique=True)
+    # time = models.DateTimeField(unique=True)
 
     # class Meta:
 
@@ -37,6 +37,7 @@ class Booking(models.Model):
     """ booking """
     # booking_id = models.ForeignKey(
     #     Client, on_delete=models.CASCADE, related_name="client_treatments")
+    # booking_treatment = models.ForeignKey(Treatment.title, on_delete=models.CASCADE)
     booking_specification = models.DateTimeField(unique=True)
     # booking_time = models.DurationField()
     booked_status = models.IntegerField(choices=BOOKED, default=0)

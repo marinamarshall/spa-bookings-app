@@ -6,9 +6,9 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Treatment)
 class TreatmentAdmin(SummernoteModelAdmin):
     """ TreatmentAdmin """
-    list_display = ('category', 'title', 'slug', 'time')
-    list_filter = ('category', 'title')
-    search_fields = ['category', 'title']
+    list_display = ('title', 'slug')
+    list_filter = ('title',)
+    search_fields = ['title']
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = 'description'
 
@@ -30,4 +30,5 @@ class BookingAdmin(admin.ModelAdmin):
     actions = ['approve_booking']
 
     def approve_booking(self, request, queryset):
+        """ approve booking """
         queryset.update(approved=True)
