@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Treatment, Client, Booking
 from django_summernote.admin import SummernoteModelAdmin
+from .models import Treatment, Client, Booking
 
 
 @admin.register(Treatment)
