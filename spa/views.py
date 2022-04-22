@@ -20,6 +20,23 @@ class TreatmentDetail(View):
             "treatment_detail.html",
             {
                 "treatment": treatment,
-                "treatment_form": TreatmentForm()
+                "treatment_form": TreatmentForm(),
+                "awaiting_approval": False,
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Treatment.objects.all()
+        treatment = get_object_or_404(queryset, slug=slug)
+
+        treatment_form = TreatmentForm(data=request.POST)
+
+        return render(
+            request,
+            "treatment_detail.html",
+            {
+                "treatment": treatment,
+                "treatment_form": TreatmentForm(),
+                "awaiting_approval": True,
             },
         )

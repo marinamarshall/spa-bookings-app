@@ -29,7 +29,13 @@
         </div>
     </div>
 </div>
-
+{% if awaiting_approval %}
+    <div class="alert">
+        <p>
+            Your booking is waiting approval
+        </p>
+    </div>
+{% else %}
 {% if user.is_authenticated %}
     <h3>
         Make a booking
@@ -41,6 +47,7 @@
             Click To Book
         </button>
     </form>
+{% endif %}
 {% endif %}
 
 {% endblock %}
