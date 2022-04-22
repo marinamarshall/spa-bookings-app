@@ -6,6 +6,7 @@ Django==3.2
 django-allauth==0.50.0
 django-booking==0.7.2
 django-countries==7.3.2
+django-crispy-forms==1.14.0
 django-datetime-widget2==0.9.5
 django-diary==3.0.4
 django-hvad==1.8.0

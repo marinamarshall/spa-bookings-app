@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Treatment
+from .forms import TreatmentForm
 
 class TreatmentList(generic.ListView):
     """ TreatmentList """
@@ -18,6 +19,7 @@ class TreatmentDetail(View):
             request,
             "treatment_detail.html",
             {
-                "treatment": treatment
+                "treatment": treatment,
+                "treatment_form": TreatmentForm()
             },
         )
