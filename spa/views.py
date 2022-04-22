@@ -12,7 +12,7 @@ class TreatmentList(generic.ListView):
 class TreatmentDetail(View):
     """ TreatmentDetail """
     def get(self, request, slug, *args, **kwargs):
-        queryset = Treatment.objects.filter(status=1)
+        queryset = Treatment.objects.all()
         treatment = get_object_or_404(queryset, slug=slug)
         return render(
             request,

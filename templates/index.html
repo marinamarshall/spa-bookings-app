@@ -13,7 +13,7 @@
                             <img class="card-img-top" src="{{ treatment.featured_image}}" alt="Spa Treatment Image">
                             <h5 class="card-title">{{ treatment.title }}</h5>
                             <!-- <p class="card-text">{{ treatment.description }}</p> -->
-                            <a href="{% url 'treatment_detail' %}" class="btn">Treatment Details</a>
+                            <a href="{% url 'treatment_detail' treatment.slug %}" class="btn">Treatment Details</a>
                         </div>
                     </div>
                 </div>
