@@ -18,6 +18,6 @@ class TreatmentDetail(View):
             request,
             "treatment_detail.html",
             {
-                "treatment" : treatment
+                "treatment": treatment
             },
         )
