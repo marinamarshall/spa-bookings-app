@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="">
+
+        {% if "placeholder" in post.featured_image.url %}
+        <img src="# " width="100%">
+        {% else %}
+        <img src=" {{ treatment.featured_image.url }}" width="100%">
+        {% endif %}
+    </div>
+
+    <div class="col">
+        <div class="row">
+            <h1>
+                {{ treatment.title }}
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card-body">
+            <p>
+                {{ treatment.description }}
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
