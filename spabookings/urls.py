@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -22,4 +23,21 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('', include('spa.urls'), name='spa_urls'),
     path('accounts/', include('allauth.urls')),
+        url(r'^admin/', admin.site.urls),
+    url(r'^accounts/login/$', auth_views.login, name='login'),
+    url(r'^accounts/logout/$',
+        auth_views.logout,
+        {'next_page': '/'},
+        name='logout'),
+    url(r'^accounts/password/reset/$',
+        auth_views.password_reset,
+        {'post_reset_redirect' : '/accounts/password/reset/done/'},
+        name='password_reset'),
+    url(r'^accounts/password/reset/done/$', auth_views.password_reset_done),
+    url(r'^accounts/password/reset/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
+        auth_views.password_reset_confirm,
+        {'post_reset_redirect' : '/accounts/password/done/'},
+        name='password_reset_confirm'),
+    url(r'^accounts/password/done/$', auth_views.password_reset_complete),
+    url(r'^diary/', include('diary.urls', namespace='diary')),
 ]

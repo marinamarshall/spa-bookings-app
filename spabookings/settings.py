@@ -49,7 +49,10 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
     'crispy_forms',
+    'diary',
+    'datetimewidget',
     'spa',
+    'spabookings.booking_functions',
 ]
 
 SITE_ID = 1
@@ -58,6 +61,11 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+AUTHENTICATION_BACKENDS = (
+    'diary.backends.CustomerAuthBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
